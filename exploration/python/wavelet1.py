@@ -1,6 +1,7 @@
 import pywt
 import matplotlib.pyplot as plt
 
+
 w = pywt.Wavelet('Haar')
 phi, psi, x = w.wavefun(level=10)
 
