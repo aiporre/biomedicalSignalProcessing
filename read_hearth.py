@@ -8,13 +8,15 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
 from numpy import fft
+import padasip as pa
+
 # data = pd.read_csv('datafiles/normal.txt', sep = ' ', header = None)
 def read_text():
     data = pd.read_table('datafiles/normal.txt', sep = ' ', skipinitialspace = True, header = None)
     data.columns = ['time', 'amplitude' ]
     data.set_index('time')
     return  data
-def window(y ,t , time_shift, n_points, type = 'square'):
+def window(y ,t , time_shift, n_points, type = 'square')  :
     for (index , time) in enumerate(t):
         if time > time_shift:
             start_index = index
