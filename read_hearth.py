@@ -33,7 +33,7 @@ data = read_text()
 y = np.array(data['amplitude'])
 t = np.array(data['time'])
 
-t_1, y_1 = window(y,t,10,1024)
+t_1, y_1 = window(y,t,10,512)
 sample_period = t_1[1] - t_1[0] #TODO: use min distance instead
 # f expressed in hertz and hat_y is fourier transform
 freq, hat_y = fourier_transform(y_1, sample_period)
